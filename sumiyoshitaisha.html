@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>景點攻略 — 住吉大社</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* ─── ⛩️ 住吉大社內頁專屬微調樣式 ─── */
+        .detail-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('住吉大社.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 90px 20px;
+            animation: bannerPop 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .detail-banner h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+        }
+
+        .detail-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .detail-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .main-content {
+            background-color: var(--card-bg);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+
+        .main-content h3 {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            margin: 30px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #edf2f4;
+        }
+
+        .main-content p {
+            margin-bottom: 15px;
+            color: #4a4e69;
+            text-align: justify;
+        }
+
+        .feature-img-box {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .feature-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sidebar-info {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border-top: 4px solid var(--primary-color);
+            height: fit-content;
+        }
+
+        .sidebar-info h3 {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .sidebar-table {
+            width: 100%;
+            box-shadow: none;
+            border-radius: 0;
+            margin: 0;
+        }
+
+        .sidebar-table tr {
+            border-bottom: 1px dashed #e5e5e5;
+        }
+
+        .sidebar-table td {
+            padding: 12px 0;
+            font-size: 0.95rem;
+        }
+
+        .sidebar-table td.label {
+            font-weight: bold;
+            color: var(--secondary-color);
+            width: 90px;
+        }
+
+        /* 返回按鈕 (玫瑰豆沙色極簡文字) */
+        .back-btn-box {
+            margin-bottom: 25px;
+            margin-top: 10px;
+        }
+
+        .back-home-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: #a65364;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .back-home-link:hover {
+            color: #bd6a7b;
+            transform: translateX(-4px);
+        }
+
+        .spot-highlights {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .spot-highlights li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+        }
+
+        .spot-highlights li::before {
+            content: "⛩️";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="detail-banner">
+        <h1>Sumiyoshi Taisha （住吉大社）</h1>
+        <p>擁有 1800 年悠久歷史，守護大阪的海上與航海之神</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="back-btn-box">
+            <a href="index.html" class="back-home-link">← 返回景點總覽首頁</a>
+        </div>
+
+        <div class="detail-layout">
+            
+            <main class="main-content">
+                
+                <div class="feature-img-box">
+                    <img src="住吉大社.jpg" alt="住吉大社反橋與本殿" class="feature-img">
+                    <span class="ai-tag">AI 生成意境圖</span>
+                </div>
+
+                <h3>📜 歷史與建築特色</h3>
+                <p>
+                    住吉大社是日本全國約 2300 座住吉神社的總本宮，歷史極其悠久，建於西元 211 年。這裡供奉著航海守護神，是大阪人心中最重要的信仰中心之一。最為人稱道的是其獨特的建築風格「住吉造」，這是日本最古老的神社建築樣式之一，已被列為日本國寶。
+                </p>
+                <p>
+                    神社內環境清幽，與市中心的繁華截然不同。茂密的樹林、莊嚴的本殿，以及充滿禪意的園林，讓人能在此遠離城市喧囂，體驗最地道的傳統日式文化。
+                </p>
+
+                <h3>✨ 參觀三大不容錯過亮點</h3>
+                <ul class="spot-highlights">
+                    <li><strong>反橋（太鼓橋）：</strong> 這座朱紅色的拱橋是住吉大社的象徵。橋面拱起的弧度極大，宛如彩虹跨越水面。據說走過這座橋便能洗淨塵世中的穢氣，也是許多攝影師捕捉傳統日本美學的經典角度。</li>
+                    <li><strong>國寶本殿：</strong> 住吉大社本殿分為四座，均保留了極為古老的「住吉造」建築特色。直線條的屋頂與強烈的色彩對比，展現了古代神道教的神聖與雄偉。</li>
+                    <li><strong>五大力石守：</strong> 在神社內尋找寫有「五」、「大」、「力」的小石頭，集齊後據說能獲得身體健康、心願成就等五種強大力量的庇佑，是極受參拜者歡迎的御守體驗。</li>
+                </ul>
+
+                <h3>💡 旅遊小貼士</h3>
+                <p>
+                    前往住吉大社的最佳交通方式是搭乘充滿復古感的 **「阪堺電車（路面電車）」**。這種電車在大阪市區已非常少見，伴隨叮叮噹噹的車鈴聲駛入神社門口，本身就是一場極佳的旅遊體驗。推薦安排在早晨前往，空氣清新且遊客較少，能更好地感受這座千年神社的莊嚴寧靜。
+                </p>
+            </main>
+
+            <aside class="sidebar-info">
+                <h3>ℹ️ 景點基本參觀資訊</h3>
+                <table class="sidebar-table">
+                    <tbody>
+                        <tr>
+                            <td class="label">景點名稱</td>
+                            <td>住吉大社 (Sumiyoshi Taisha)</td>
+                        </tr>
+                        <tr>
+                            <td class="label">開放時間</td>
+                            <td>06:00 〜 17:00</td>
+                        </tr>
+                        <tr>
+                            <td class="label">預估門票</td>
+                            <td>免費參觀</td>
+                        </tr>
+                        <tr>
+                            <td class="label">建議停留</td>
+                            <td>約 1 〜 1.5 小時</td>
+                        </tr>
+                        <tr>
+                            <td class="label">交通方式</td>
+                            <td>
+                                • 阪堺電車：<strong>「住吉鳥居前站」</strong> 下車即達。<br>
+                                • 南海電鐵：<strong>「住吉大社站」</strong> 徒步約 3 分鐘。
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </aside>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 大阪旅遊全攻略報告. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

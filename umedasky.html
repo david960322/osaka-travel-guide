@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>景點攻略 — 梅田空中庭園展望台</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* ─── 🌌 梅田空中庭園內頁專屬微調樣式 ─── */
+        .detail-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('梅田空中庭園.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 90px 20px;
+            animation: bannerPop 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .detail-banner h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+        }
+
+        /* 內頁專屬左右兩欄佈局 */
+        .detail-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        /* 當螢幕變小時自動切換為單欄佈局 */
+        @media (max-width: 768px) {
+            .detail-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        /* 左側主內文區塊 */
+        .main-content {
+            background-color: var(--card-bg);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+
+        .main-content h3 {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            margin: 30px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #edf2f4;
+        }
+
+        .main-content h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .main-content p {
+            margin-bottom: 15px;
+            color: #4a4e69;
+            text-align: justify;
+        }
+
+        /* 頁面大圖容器 */
+        .feature-img-box {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .feature-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 右側實用資訊邊欄 */
+        .sidebar-info {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border-top: 4px solid var(--primary-color);
+            height: fit-content;
+        }
+
+        .sidebar-info h3 {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        /* 邊欄專屬極簡表格 */
+        .sidebar-table {
+            width: 100%;
+            box-shadow: none;
+            border-radius: 0;
+            margin: 0;
+        }
+
+        .sidebar-table tr {
+            border-bottom: 1px dashed #e5e5e5;
+        }
+
+        .sidebar-table tr:hover td {
+            background-color: transparent;
+        }
+
+        .sidebar-table td {
+            padding: 12px 0;
+            font-size: 0.95rem;
+        }
+
+        .sidebar-table td.label {
+            font-weight: bold;
+            color: var(--secondary-color);
+            width: 90px;
+        }
+
+        /* ─── 返回按鈕設定 — 完美還原玫瑰豆沙色極簡風格 ─── */
+        .back-btn-box {
+            margin-bottom: 25px;
+            margin-top: 10px;
+        }
+
+        .back-home-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: #a65364;          /* 專屬優雅玫瑰豆沙色 */
+            font-size: 1.1rem;       /* 視覺比例與圖片一致 */
+            font-weight: 500;        /* 中等字體粗細 */
+            letter-spacing: 1px;     /* 微調字距增加呼吸感 */
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .back-home-link:hover {
+            color: #bd6a7b;          /* 懸停時稍微亮化 */
+            transform: translateX(-4px); /* 輕微向左滑動 */
+        }
+
+        /* 亮點列表樣式 */
+        .spot-highlights {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .spot-highlights li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+        }
+
+        .spot-highlights li::before {
+            content: "🌌";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="detail-banner">
+        <h1>Umeda Sky Building （梅田空中庭園展望台）</h1>
+        <p>漫步於 173 公尺高空的璀璨星光與 360 度夢幻夜景</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="back-btn-box">
+            <a href="index.html" class="back-home-link">← 返回景點總覽首頁</a>
+        </div>
+
+        <div class="detail-layout">
+            
+            <main class="main-content">
+                
+                <div class="feature-img-box">
+                    <img src="梅田空中庭園.jpg" alt="梅田空中庭園展望台夜景" class="feature-img">
+                    <span class="ai-tag">AI 生成意境圖</span>
+                </div>
+
+                <h3>📜 建築美學與背景介紹</h3>
+                <p>
+                    位於梅田藍天大廈（Umeda Sky Building）頂部的空中庭園展望台，是大阪享譽國際的指標性現代建築。這棟大廈由建築師原廣司設計，於 1993 年落成。其最震撼的設計在於由兩棟高達 40 層的超高層大樓對稱並立，並在頂部連結起一個環狀的露天觀景平台，完美的幾何中空結構曾被英國《泰晤士報》評選為「世界世界前 20 大最具代表性建築」之一。
+                </p>
+                <p>
+                    這裡顛覆了傳統封閉式展望台的刻板印象，提供了一個完全置身於大自然清風之中的露天觀景視角。無論是白天的極目遠眺，還是日落時分將整個大阪灣染成金黃的魔幻時刻，甚至是夜晚萬家燈火的繁華夜景，都能帶給遊客極致的視覺震撼。
+                </p>
+
+                <h3>✨ 參觀三大不容錯過亮點</h3>
+                <ul class="spot-highlights">
+                    <li><strong>全透視高空時光電扶梯：</strong> 在前往展望台的途中，遊客會搭乘一段架設在兩棟大樓空中交界處的懸空電扶梯。透過兩側全透明的玻璃外牆，可以一覽無遺高空的透視感，宛如穿梭於科幻電影中的時光隧道。</li>
+                    <li><strong>「Lumi Sky Walk」露天星光大道：</strong> 位於 40 樓上方的露天平台（RF層），地面鋪設了特殊的蓄光石。每當夜幕低垂，整條步道會綻放出如同銀河般神祕浪漫的螢光。配合迎面吹來的高空微風，漫步其上就如同翱翔在星空之中。</li>
+                    <li><strong>同心鎖誓言牆與情人雅座：</strong> 展望台內設有許多面向絕佳夜景的雙人沙發座。此外，戶外還設有「心形鎖牆」，情侶可以在這裡掛上刻有兩人的紀念鎖，是全日本知名的戀人聖地。</li>
+                </ul>
+
+                <h3>💡 旅遊小貼士</h3>
+                <p>
+                    為了獲得最棒的視覺體驗，強烈建議在**日落前 30 分鐘**抵達展望台。這樣你就能同時將金黃色的夕陽餘暉與隨後亮起的繁華夜景一網打盡！另外，大廈底層地下 1 樓還設有重現日本昭和時代復古街道的「瀧見小路」美食街，觀賞完美景後可以順道下樓品嚐大阪燒等道地關西傳統美食。
+                </p>
+            </main>
+
+            <aside class="sidebar-info">
+                <h3>ℹ️ 景點基本參觀資訊</h3>
+                <table class="sidebar-table">
+                    <tbody>
+                        <tr>
+                            <td class="label">景點名稱</td>
+                            <td>梅田空中庭園展望台</td>
+                        </tr>
+                        <tr>
+                            <td class="label">開放時間</td>
+                            <td>09:30 〜 22:30 <br><small style="color:#888;">(最終入場時間為 22:00，部分特殊節日會彈性延長)</small></td>
+                        </tr>
+                        <tr>
+                            <td class="label">預估門票</td>
+                            <td>大人 ¥2,000 <br><small style="color:#666;">(4歲至小學生為 ¥500)</small><br><small style="color:#e63946;">※ 持「大阪周遊卡」可在指定下午時段內享受免費入場，請提前至官網確認最新時段規定</small></td>
+                        </tr>
+                        <tr>
+                            <td class="label">休館日期</td>
+                            <td>全年無休</td>
+                        </tr>
+                        <tr>
+                            <td class="label">建議停留</td>
+                            <td>約 1 〜 1.5 小時</td>
+                        </tr>
+                        <tr>
+                            <td class="label">交通方式</td>
+                            <td>
+                                • JR 幹線：<strong>「大阪站」</strong> 徒步約 7〜9 分鐘。<br>
+                                • 大阪地鐵御堂筋線：<strong>「梅田站」</strong> 5號出口，往 Grand Front Osaka 方向經由地下人行道徒步約 9 分鐘即可抵達。
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </aside>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 大阪旅遊全攻略報告. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

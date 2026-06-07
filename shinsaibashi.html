@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>景點攻略 — 心齋橋商店街</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* ─── 🛍️ 心齋橋內頁專屬微調樣式 ─── */
+        .detail-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('心齋橋.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 90px 20px;
+            animation: bannerPop 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .detail-banner h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+        }
+
+        /* 內頁專屬左右兩欄佈局 */
+        .detail-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        /* 當螢幕變小時自動切換為單欄佈局 */
+        @media (max-width: 768px) {
+            .detail-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        /* 左側主內文區塊 */
+        .main-content {
+            background-color: var(--card-bg);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+
+        .main-content h3 {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            margin: 30px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #edf2f4;
+        }
+
+        .main-content h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .main-content p {
+            margin-bottom: 15px;
+            color: #4a4e69;
+            text-align: justify;
+        }
+
+        /* 頁面大圖容器 */
+        .feature-img-box {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .feature-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 右側實用資訊邊欄 */
+        .sidebar-info {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border-top: 4px solid var(--primary-color);
+            height: fit-content;
+        }
+
+        .sidebar-info h3 {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        /* 邊欄專屬極簡表格 */
+        .sidebar-table {
+            width: 100%;
+            box-shadow: none;
+            border-radius: 0;
+            margin: 0;
+        }
+
+        .sidebar-table tr {
+            border-bottom: 1px dashed #e5e5e5;
+        }
+
+        .sidebar-table tr:hover td {
+            background-color: transparent;
+        }
+
+        .sidebar-table td {
+            padding: 12px 0;
+            font-size: 0.95rem;
+        }
+
+        .sidebar-table td.label {
+            font-weight: bold;
+            color: var(--secondary-color);
+            width: 90px;
+        }
+
+        /* ─── 返回按鈕設定 — 完美還原玫瑰豆沙色極簡風格 ─── */
+        .back-btn-box {
+            margin-bottom: 25px;
+            margin-top: 10px;
+        }
+
+        .back-home-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: #a65364;          /* 專屬優雅玫瑰豆沙色 */
+            font-size: 1.1rem;       /* 視覺比例與圖片一致 */
+            font-weight: 500;        /* 中等字體粗細 */
+            letter-spacing: 1px;     /* 微調字距增加呼吸感 */
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .back-home-link:hover {
+            color: #bd6a7b;          /* 懸停時稍微亮化 */
+            transform: translateX(-4px); /* 輕微向左滑動 */
+        }
+
+        /* 亮點列表樣式 */
+        .spot-highlights {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .spot-highlights li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+        }
+
+        .spot-highlights li::before {
+            content: "🛍️";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="detail-banner">
+        <h1>Shinsaibashi-suji Shopping Street （心齋橋商店街）</h1>
+        <p>橫跨四個世紀的購物天堂與全關西潮流風向球</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="back-btn-box">
+            <a href="index.html" class="back-home-link">← 返回景點總覽首頁</a>
+        </div>
+
+        <div class="detail-layout">
+            
+            <main class="main-content">
+                
+                <div class="feature-img-box">
+                    <img src="心齋橋.jpg" alt="心齋橋商店街內部人潮" class="feature-img">
+                    <span class="ai-tag">AI 生成意境圖</span>
+                </div>
+
+                <h3>📜 歷史背景與深度介紹</h3>
+                <p>
+                    心齋橋商店街的歷史可以追溯到江戶時代（大約 1622 年），當時商人岡田心齋在此開鑿了心齋橋，進而帶動了周邊商業活動的蓬勃發展。歷經 400 多年的歲月更迭，心齋橋從最初的舊式布匹服飾批發地，蛻變成為如今全長約 600 公尺、頂部設有全天候挑高拱形遮雨棚的現代化超級商業步行街。
+                </p>
+                <p>
+                    無論是晴天、雨天，這裡總是擠滿了前來尋寶的各國遊客與日本在地年輕人。這條直通難波與道頓堀的核心街道，兩側匯聚了數百家極具吸引力的商鋪，堪稱全大阪最具活力的時尚與消費重鎮。
+                </p>
+
+                <h3>✨ 參觀三大不容錯過亮點</h3>
+                <ul class="spot-highlights">
+                    <li><strong>藥妝與日系美妝一級戰區：</strong> 這裡密集進駐了各大知名连锁藥妝店（如松本清、大國藥妝、Sundrug 等）。各大店家經常推出限定優惠活動、中文免稅服務，是採購日本境內美妝與生活用品的絕對首選。</li>
+                    <li><strong>全方位潮流品牌旗艦店：</strong> 街內囊括了從國民平價服飾（Uniqlo、GU、Zara）的大型旗艦店，到深受年輕人喜愛的運動潮流鞋店（Onitsuka Tiger、ABC-Mart Grand Stage），甚至是高質感的日系少女服飾、動漫周邊，應有盡有。</li>
+                    <li><strong>全天候舒適拱頂設計：</strong> 整條街建有精緻的採光遮雨棚，夏季能有效防曬，雨天或寒冬時也能提供無比溫暖舒適的踩街環境，讓你的購物行程完全不受天氣因素影響。</li>
+                </ul>
+
+                <h3>💡 旅遊小貼士</h3>
+                <p>
+                    心齋橋大部分商店與百貨的營業時間集中在 **10:30 到 21:00 之間**，建議將心齋橋的「瘋狂購物行程」排在下午，等晚上九點店家陸續打烊後，再散步到相連的道頓堀一邊欣賞運河霓虹夜景、一邊享用熱騰騰的章魚燒與串炸晚餐，這樣串聯是最完美的黃金路線！
+                </p>
+            </main>
+
+            <aside class="sidebar-info">
+                <h3>ℹ️ 景點基本參觀資訊</h3>
+                <table class="sidebar-table">
+                    <tbody>
+                        <tr>
+                            <td class="label">景點名稱</td>
+                            <td>心齋橋商店街</td>
+                        </tr>
+                        <tr>
+                            <td class="label">開放時間</td>
+                            <td>商店街全天開放 <br><small style="color:#888;">(各店家多於 10:30 〜 21:00 營業)</small></td>
+                        </tr>
+                        <tr>
+                            <td class="label">預估門票</td>
+                            <td>免費逛街參觀</td>
+                        </tr>
+                        <tr>
+                            <td class="label">購物小撇步</td>
+                            <td>隨身攜帶護照 <br><small style="color:#e63946;">※ 單店消費滿 ¥5,000 可直接辦理退稅</small></td>
+                        </tr>
+                        <tr>
+                            <td class="label">建議停留</td>
+                            <td>約 2 〜 3 小時 (視購物需求而定)</td>
+                        </tr>
+                        <tr>
+                            <td class="label">交通方式</td>
+                            <td>
+                                • 大阪地鐵 御堂筋線 / 長堀鶴見綠地線：<strong>「心齋橋站」</strong> 5號或6號出口直通商店街。<br>
+                                • 從地鐵<strong>「難波站」</strong>徒步沿戎橋筋往北走約 8 分鐘亦可連通。
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </aside>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 大阪旅遊全攻略報告. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

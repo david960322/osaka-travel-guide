@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>景點攻略 — 黑門市場</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* ─── 🦀 黑門市場內頁專屬微調樣式 ─── */
+        .detail-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('黑門市場.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 90px 20px;
+            animation: bannerPop 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .detail-banner h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+        }
+
+        /* 內頁專屬左右兩欄佈局 */
+        .detail-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        /* 當螢幕變小時自動切換為單欄佈局 */
+        @media (max-width: 768px) {
+            .detail-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        /* 左側主內文區塊 */
+        .main-content {
+            background-color: var(--card-bg);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+
+        .main-content h3 {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            margin: 30px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #edf2f4;
+        }
+
+        .main-content h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .main-content p {
+            margin-bottom: 15px;
+            color: #4a4e69;
+            text-align: justify;
+        }
+
+        /* 頁面大圖容器 */
+        .feature-img-box {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .feature-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 右側實用資訊邊欄 */
+        .sidebar-info {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border-top: 4px solid var(--primary-color);
+            height: fit-content;
+        }
+
+        .sidebar-info h3 {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        /* 邊欄專屬極簡表格 */
+        .sidebar-table {
+            width: 100%;
+            box-shadow: none;
+            border-radius: 0;
+            margin: 0;
+        }
+
+        .sidebar-table tr {
+            border-bottom: 1px dashed #e5e5e5;
+        }
+
+        .sidebar-table tr:hover td {
+            background-color: transparent;
+        }
+
+        .sidebar-table td {
+            padding: 12px 0;
+            font-size: 0.95rem;
+        }
+
+        .sidebar-table td.label {
+            font-weight: bold;
+            color: var(--secondary-color);
+            width: 90px;
+        }
+
+        /* ─── 返回按鈕設定 — 完美還原玫瑰豆沙色極簡風格 ─── */
+        .back-btn-box {
+            margin-bottom: 25px;
+            margin-top: 10px;
+        }
+
+        .back-home-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: #a65364;          /* 專屬優雅玫瑰豆沙色 */
+            font-size: 1.1rem;       /* 視覺比例與圖片一致 */
+            font-weight: 500;        /* 中等字體粗細 */
+            letter-spacing: 1px;     /* 微調字距增加呼吸感 */
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .back-home-link:hover {
+            color: #bd6a7b;          /* 懸停時稍微亮化 */
+            transform: translateX(-4px); /* 輕微向左滑動 */
+        }
+
+        /* 亮點列表樣式 */
+        .spot-highlights {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .spot-highlights li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+        }
+
+        .spot-highlights li::before {
+            content: "🐟";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="detail-banner">
+        <h1>Kuromon Ichiba Market （黑門市場）</h1>
+        <p>濃厚關西庶民風情與頂級生鮮美食的大阪「廚房」</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="back-btn-box">
+            <a href="index.html" class="back-home-link">← 返回景點總覽首頁</a>
+        </div>
+
+        <div class="detail-layout">
+            
+            <main class="main-content">
+                
+                <div class="feature-img-box">
+                    <img src="黑門市場.jpg" alt="黑門市場熱鬧街道與海鮮攤位" class="feature-img">
+                    <span class="ai-tag">AI 生成意境圖</span>
+                </div>
+
+                <h3>📜 歷史背景與深度介紹</h3>
+                <p>
+                    黑門市場的歷史可以追溯到江戶時代末期（大約 1822 年），當時因附近有一座名為「圓明寺」的寺廟，其東北邊的黑色大門赫赫有名，因此這座販售生鮮的市集便被親切地稱為「黑門市場」。雖然圓明寺後來在一場大火中燒毀，但這個極具代表性的名字卻完好地流傳了下來。
+                </p>
+                <p>
+                    在總長約 580 公尺的拱頂街道內，密集分布著約 150 家店鋪。這裡早期以供應高級專業主廚的生鮮食材起家，如今轉型為廣受國際遊客喜愛的美食聖地。從新鮮空運的海鮮、高檔黑毛和牛、到當季的日本國產水果應有盡有，是體驗大阪在地「胃袋文化」與濃厚昭和復古風情絕不可錯過的經典去處。
+                </p>
+
+                <h3>✨ 參觀三大不容錯過亮點</h3>
+                <ul class="spot-highlights">
+                    <li><strong>現點現烤的頂級海鮮饗宴：</strong> 這裡最頂級的玩法就是「邊走邊吃」。攤位上擺滿了色澤誘人的巨型黑鮪魚生魚片、手掌大的現烤大干貝、濃郁海膽以及烤大龍蝦，挑選後店家會立刻為你現場炙烤，鮮甜滋味直衝味蕾。</li>
+                    <li><strong>入口即化的黑毛和牛與串燒：</strong> 除了海鮮之外，許多頂級肉舖也進駐於此。遊客能以極其親民的批發價格，挑選神戶牛或黑毛和牛的現切肉片，由師傅用鐵板當場現煎，油脂香氣四溢，令人垂涎三尺。</li>
+                    <li><strong>當季水果與日系庶民小吃：</strong> 這裡也是採購日本當季高品質水果的絕佳地點，如極高知名度的奈良白草莓、山梨縣麝香葡萄及香甜多汁的哈密瓜。此外，關西道地的章魚燒、關東煮與草餅等傳統點心也同樣不容錯過。</li>
+                </ul>
+
+                <h3>💡 旅遊小貼士</h3>
+                <p>
+                    黑門市場大部分的店家從早上 **09:00 開始營業，大約到傍晚 17:00 或 18:00 就會陸續打烊**。因此，這裡最完美的行程定位是**「享受一頓奢華的早午餐」**。建議在早上 10 點至 11 點之間前來，這時所有海鮮肉品攤位都已準備齊全，且能完美避開正中午的擁擠人潮。
+                </p>
+            </main>
+
+            <aside class="sidebar-info">
+                <h3>ℹ️ 景點基本參觀資訊</h3>
+                <table class="sidebar-table">
+                    <tbody>
+                        <tr>
+                            <td class="label">景點名稱</td>
+                            <td>黑門市場 (Kuromon Ichiba)</td>
+                        </tr>
+                        <tr>
+                            <td class="label">開放時間</td>
+                            <td>09:00 〜 18:00 <br><small style="color:#888;">(各店家營業時間略有不同，建議中午前到訪食材最齊全)</small></td>
+                        </tr>
+                        <tr>
+                            <td class="label">預估門票</td>
+                            <td>免費參觀 <br><small style="color:#e63946;">※ 全程雨天拱頂遮棚設計</small></td>
+                        </tr>
+                        <tr>
+                            <td class="label">休市日期</td>
+                            <td>多數店家於週日或元旦休假</td>
+                        </tr>
+                        <tr>
+                            <td class="label">建議停留</td>
+                            <td>約 1.5 〜 2 小時 (含用餐散步)</td>
+                        </tr>
+                        <tr>
+                            <td class="label">交通方式</td>
+                            <td>
+                                • 大阪地鐵 千日前線 / 堺筋線：<strong>「日本橋站」</strong> 10號出口，出站徒步約 1〜2 分鐘即可抵達。<br>
+                                • 近鐵奈良線：<strong>「近鐵日本橋站」</strong> 徒步約 3 分鐘。
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </aside>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 大阪旅遊全攻略報告. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

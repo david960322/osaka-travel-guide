@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>景點攻略 — 通天閣</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* ─── 🗼 通天閣內頁專屬微調樣式 ─── */
+        .detail-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('通天閣.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 90px 20px;
+            animation: bannerPop 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .detail-banner h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+        }
+
+        /* 內頁專屬左右兩欄佈局 */
+        .detail-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .detail-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .main-content {
+            background-color: var(--card-bg);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+
+        .main-content h3 {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            margin: 30px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #edf2f4;
+        }
+
+        .main-content p {
+            margin-bottom: 15px;
+            color: #4a4e69;
+            text-align: justify;
+        }
+
+        .feature-img-box {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .feature-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sidebar-info {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border-top: 4px solid var(--primary-color);
+            height: fit-content;
+        }
+
+        .sidebar-info h3 {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .sidebar-table {
+            width: 100%;
+            box-shadow: none;
+            border-radius: 0;
+            margin: 0;
+        }
+
+        .sidebar-table tr {
+            border-bottom: 1px dashed #e5e5e5;
+        }
+
+        .sidebar-table td {
+            padding: 12px 0;
+            font-size: 0.95rem;
+        }
+
+        .sidebar-table td.label {
+            font-weight: bold;
+            color: var(--secondary-color);
+            width: 90px;
+        }
+
+        /* 返回按鈕 (玫瑰豆沙色極簡文字) */
+        .back-btn-box {
+            margin-bottom: 25px;
+            margin-top: 10px;
+        }
+
+        .back-home-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: #a65364;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .back-home-link:hover {
+            color: #bd6a7b;
+            transform: translateX(-4px);
+        }
+
+        .spot-highlights {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .spot-highlights li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+        }
+
+        .spot-highlights li::before {
+            content: "🗼";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="detail-banner">
+        <h1>Tsutenkaku （通天閣）</h1>
+        <p>大阪下町文化的靈魂地標，感受懷舊昭和風情</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="back-btn-box">
+            <a href="index.html" class="back-home-link">← 返回景點總覽首頁</a>
+        </div>
+
+        <div class="detail-layout">
+            
+            <main class="main-content">
+                
+                <div class="feature-img-box">
+                    <img src="通天閣.jpg" alt="通天閣外觀" class="feature-img">
+                    <span class="ai-tag">AI 生成意境圖</span>
+                </div>
+
+                <h3>📜 歷史與文化意義</h3>
+                <p>
+                    通天閣位於大阪浪速區的「新世界」地區，這座名字意為「直通天空的高大建築物」的塔，最早建於 1912 年。現在我們看到的則是 1956 年重建的第二代通天閣。它不僅是大阪歷史的見證者，更是當地庶民文化的象徵。
+                </p>
+                <p>
+                    這裡所在的「新世界」區域充滿了濃厚的懷舊氣息，街道兩旁掛滿了誇張的大型看板。通天閣與周圍繁華的商店街，完美呈現了大阪最真實、熱情且粗獷的一面，是攝影愛好者捕捉日本昭和時代風格的絕佳景點。
+                </p>
+
+                <h3>✨ 參觀三大不容錯過亮點</h3>
+                <ul class="spot-highlights">
+                    <li><strong>幸運之神「Billiken」像：</strong> 展望台內供奉著一尊獨特的福神像「Billiken」。據說摸摸它的腳底，就能為自己帶來好運與財富，來到此處請務必親自感受這股靈驗的能量。</li>
+                    <li><strong>刺激的懸空透明觀景台：</strong> 通天閣頂部設有延伸出去的透明觀景區域「TIP THE TSUTENKAKU」，站在這裡可以透過玻璃地板直接俯瞰地面，感受極高空的視覺衝擊。</li>
+                    <li><strong>新世界美食區：</strong> 塔下方的商店街是「串炸（Kushikatsu）」的發源地。各式各樣的食材裹粉油炸後沾上特製醬汁，搭配冰涼的啤酒，是在地人最推薦的通天閣標配行程。</li>
+                </ul>
+
+                <h3>💡 旅遊小貼士</h3>
+                <p>
+                    通天閣的夜景與白天截然不同，霓虹燈亮起後的復古氛圍更加濃厚。建議安排在傍晚前來，先在展望台眺望市區，隨後下樓在充滿煙火氣的商店街享用晚餐。這裡步行至天王寺動物園或阿倍野 Harukas 也很近，可以規劃一場「新舊大阪文化巡禮」。
+                </p>
+            </main>
+
+            <aside class="sidebar-info">
+                <h3>ℹ️ 景點基本參觀資訊</h3>
+                <table class="sidebar-table">
+                    <tbody>
+                        <tr>
+                            <td class="label">景點名稱</td>
+                            <td>通天閣 (Tsutenkaku)</td>
+                        </tr>
+                        <tr>
+                            <td class="label">開放時間</td>
+                            <td>10:00 〜 20:00 <br><small style="color:#888;">(最終入場為 19:30)</small></td>
+                        </tr>
+                        <tr>
+                            <td class="label">預估門票</td>
+                            <td>大人 ¥900 <br><small style="color:#e63946;">※ 持大阪周遊卡可免費入場</small></td>
+                        </tr>
+                        <tr>
+                            <td class="label">建議停留</td>
+                            <td>約 1 〜 1.5 小時</td>
+                        </tr>
+                        <tr>
+                            <td class="label">交通方式</td>
+                            <td>
+                                • 大阪地鐵 堺筋線：<strong>「惠美須町站」</strong> 3號出口徒步約 3 分鐘。<br>
+                                • JR 環狀線：<strong>「新今宮站」</strong> 徒步約 10 分鐘。
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </aside>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 大阪旅遊全攻略報告. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

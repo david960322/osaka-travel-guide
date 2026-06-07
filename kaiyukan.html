@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>景點攻略 — 大阪海遊館</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* ─── 🦈 海遊館內頁專屬微調樣式 ─── */
+        .detail-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('海遊館.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 90px 20px;
+            animation: bannerPop 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .detail-banner h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+        }
+
+        /* 內頁專屬左右兩欄佈局 */
+        .detail-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        /* 當螢幕變小時自動切換為單欄佈局 */
+        @media (max-width: 768px) {
+            .detail-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        /* 左側主內文區塊 */
+        .main-content {
+            background-color: var(--card-bg);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+
+        .main-content h3 {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            margin: 30px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #edf2f4;
+        }
+
+        .main-content h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .main-content p {
+            margin-bottom: 15px;
+            color: #4a4e69;
+            text-align: justify;
+        }
+
+        /* 頁面大圖容器 */
+        .feature-img-box {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .feature-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 右側實用資訊邊欄 */
+        .sidebar-info {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border-top: 4px solid var(--primary-color);
+            height: fit-content;
+        }
+
+        .sidebar-info h3 {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        /* 邊欄專屬極簡表格 */
+        .sidebar-table {
+            width: 100%;
+            box-shadow: none;
+            border-radius: 0;
+            margin: 0;
+        }
+
+        .sidebar-table tr {
+            border-bottom: 1px dashed #e5e5e5;
+        }
+
+        .sidebar-table tr:hover td {
+            background-color: transparent;
+        }
+
+        .sidebar-table td {
+            padding: 12px 0;
+            font-size: 0.95rem;
+        }
+
+        .sidebar-table td.label {
+            font-weight: bold;
+            color: var(--secondary-color);
+            width: 90px;
+        }
+
+        /* 返回按鈕設定 */
+        .back-btn-box {
+            margin-bottom: 20px;
+        }
+
+        .back-home-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .back-home-link:hover {
+            color: var(--primary-color);
+            transform: translateX(-4px);
+        }
+
+        /* 亮點列表樣式 */
+        .spot-highlights {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .spot-highlights li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+        }
+
+        .spot-highlights li::before {
+            content: "🦈";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="detail-banner">
+        <h1>Osaka Aquarium Kaiyukan （海遊館）</h1>
+        <p>環太平洋生命之環的壯麗深海交響曲</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="back-btn-box">
+            <a href="index.html" class="back-home-link">← 返回景點總覽首頁</a>
+        </div>
+
+        <div class="detail-layout">
+            
+            <main class="main-content">
+                
+                <div class="feature-img-box">
+                    <img src="海遊館.jpg" alt="大阪海遊館外觀與水槽" class="feature-img">
+                    <span class="ai-tag">AI 生成意境圖</span>
+                </div>
+
+                <h3>📜 核心設計與背景介紹</h3>
+                <p>
+                    開園於 1990 年的大阪海遊館，是世界最大規模的室內水族館之一。其建築外觀極具現代感，紅藍交織的幾何色塊象徵著火山與海洋。海遊館的展示概念根植於科學家詹姆斯·洛夫洛克的「蓋亞假說」，將地球視為一個完整的生命體。
+                </p>
+                <p>
+                    整個館內環繞著「環太平洋火山帶（Ring of Fire）」與「環太平洋生命帶（Ring of Life）」兩大核心設計。參觀路線非常獨特，遊客會先搭乘長型電扶梯直達 8 樓的阿留申群島區，再順著螺旋狀的中央斜坡逐層向下漫步至深海區，從水上、水面一路探索到冰冷迷幻的蔚藍海底。
+                </p>
+
+                <h3>✨ 參觀三大不容錯過亮點</h3>
+                <ul class="spot-highlights">
+                    <li><strong>「太平洋」巨大水槽與鎮館之寶：</strong> 位於水族館中央核心的巨大深海水槽，深達 9 公尺、水量高達 5,400 噸。悠游其中的巨大「鯨鯊」是海遊館最受歡迎的明星，搭配魔鬼魚與成群的銀閃沙丁魚，完美重現了大洋生態的震撼規模。</li>
+                    <li><strong>極光水母銀河區：</strong> 這裡是一處將光影與音效完美結合的沉浸式空間。全黑的展廳內放置了數個懸浮透明圓柱水槽，無數輕盈透明的水母在變幻微光中漂浮漂移，宛如置身於寂靜的宇宙銀河中。</li>
+                    <li><strong>新體驗互動區：</strong> 在這裡遊客能夠近距離觀察北極圈環斑海豹的萌樣。更棒的是，這裡設有開放式的親水觸摸池（視館方開放狀況），在洗淨雙手後，能夠親手觸摸鯊魚與魟魚微粗的魚皮皮膚，極具教育意義。</li>
+                </ul>
+
+                <h3>💡 旅遊小貼士</h3>
+                <p>
+                    海遊館每天下午 5 點後會切換為「夜間水族館」模式。館內會關閉常規照明，改用模擬月光的深藍色浪漫燈光，並播放療癒的海浪音樂，此時館內遊客較少，非常適合喜歡安靜看魚或情侶約會。此外，建議將旁邊的天保山大摩天輪、天保山購物廣場安排在同一個下午，行程會非常順暢！
+                </p>
+            </main>
+
+            <aside class="sidebar-info">
+                <h3>ℹ️ 景點基本參觀資訊</h3>
+                <table class="sidebar-table">
+                    <tbody>
+                        <tr>
+                            <td class="label">景點名稱</td>
+                            <td>大阪海遊館 (Kaiyukan)</td>
+                        </tr>
+                        <tr>
+                            <td class="label">開放時間</td>
+                            <td>10:00 〜 20:00 <br><small style="color:#888;">(季節性調整，週末與連續假期常提早於 09:00 或 09:30 開館，最終入館為閉館前1小時)</small></td>
+                        </tr>
+                        <tr>
+                            <td class="label">預估門票</td>
+                            <td>大人 ¥2,400 <br><small style="color:#666;">(依年齡段區分：國中小學 ¥1,200 / 幼兒 ¥600)</small><br><small style="color:#e63946;">※ 持大阪周遊卡無免費登館，但出示可享門票 ¥100 折抵優惠</small></td>
+                        </tr>
+                        <tr>
+                            <td class="label">休館日期</td>
+                            <td>基本上全年無休 <br><small style="color:#888;">(僅 1、2 月會有不定期數日進行硬體檢修)</small></td>
+                        </tr>
+                        <tr>
+                            <td class="label">建議停留</td>
+                            <td>約 2.5 〜 3 小時</td>
+                        </tr>
+                        <tr>
+                            <td class="label">交通方式</td>
+                            <td>
+                                • 大阪地鐵中央線：<strong>「大阪港站」</strong> 1號出口，沿標示往港區方向徒步約 5 分鐘。
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </aside>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 大阪旅遊全攻略報告. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
