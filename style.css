@@ -519,3 +519,27 @@ footer {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
+.hero-banner {
+    /* 這裡設定圖片與遮罩：黑色半透明遮罩 + 你的圖片路徑 */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                      url('home.jpg');
+    
+    /* 讓圖片填滿區塊並置中 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* 調整區塊高度，讓圖片顯示完整 */
+    height: 400px; 
+    
+    /* 讓內容垂直與水平置中 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* 文字設定 */
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
