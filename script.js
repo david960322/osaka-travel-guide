@@ -1,33 +1,41 @@
-async function sendMessage() {
-  const inputField = document.getElementById('user-input');
-  const responseDiv = document.getElementById('ai-response');
-  const input = inputField.value;
+// 確保 DOM 載入後才執行
+document.addEventListener('DOMContentLoaded', () => {
+    const sendBtn = document.getElementById('send-btn') || document.querySelector('[onclick="sendMessage()"]');
+    const inputField = document.getElementById('user-input');
+    const responseDiv = document.getElementById('ai-response');
 
-  if (!input) return; // 沒輸入字就不執行
+    async function sendMessage() {
+        const input = inputField.value;
+        if (!input) return;
 
-  // 顯示正在載入
-  responseDiv.innerText = "思考中...";
-  
-  try {
-    const res = await fetch('/api/chat', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: input })
-    });
-    
-    const data = await res.json();
-    
-    // 顯示 AI 回覆
-    if (data.candidates && data.candidates[0].content) {
-        const text = data.candidates[0].content.parts[0].text;
-        responseDiv.innerText = text;
-    } else {
-        responseDiv.innerText = "抱歉，AI 暫時無法回答，請稍後再試。";
-        console.error("API 回傳結構錯誤:", data); // 在開發者工具看詳細錯誤
+        responseDiv.innerText = "思考中...";
+        inputField.value = "";
+
+        try {
+            const res = await fetch('/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: input })
+            });
+
+            const data = await res.json();
+            if (data.candidates && data.candidates[0].content) {
+                responseDiv.innerText = data.candidates[0].content.parts[0].text;
+            } else {
+                responseDiv.innerText = "抱歉，AI 暫時無法回答。";
+            }
+        } catch (error) {
+            responseDiv.innerText = "系統忙碌中，請稍後再試。";
+        }
     }
-  } catch (error) {
-    responseDiv.innerText = "抱歉，系統暫時無法回應，請稍後再試。";
-  }
-  
-  inputField.value = ""; // 清空輸入框
-}
+
+    // 將 sendMessage 掛到 window 供 onclick 屬性使用
+    window.sendMessage = sendMessage;
+
+    // 支援按下 Enter 發送
+    if (inputField) {
+        inputField.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+    }
+});
