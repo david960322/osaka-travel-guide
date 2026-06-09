@@ -1,7 +1,6 @@
-// 確保 DOM 載入後才執行
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ── 自動插入聊天對話框到每個頁面 ──
+    // ── 自動插入聊天對話框 ──
     const chatHTML = `
     <div class="chat-widget" id="chat-widget">
         <div id="chat-header">大阪旅遊 AI 助手</div>
@@ -13,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>`;
     document.body.insertAdjacentHTML('beforeend', chatHTML);
 
-    // ── 插入後才取得元素 ──
     const inputField = document.getElementById('user-input');
     const responseDiv = document.getElementById('ai-response');
     const sendBtn = document.getElementById('send-btn');
@@ -33,20 +31,28 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             const data = await res.json();
+
+            // 顯示 Gemini 錯誤細節（除錯用）
+            if (data.geminiError) {
+                responseDiv.innerText = "Gemini 錯誤：" + JSON.stringify(data.geminiError);
+                return;
+            }
+            if (data.error) {
+                responseDiv.innerText = "錯誤：" + data.error;
+                return;
+            }
+
             if (data.candidates && data.candidates[0].content) {
                 responseDiv.innerText = data.candidates[0].content.parts[0].text;
             } else {
-                responseDiv.innerText = "抱歉，AI 暫時無法回答。";
+                responseDiv.innerText = "回傳格式異常：" + JSON.stringify(data);
             }
         } catch (error) {
-            responseDiv.innerText = "系統忙碌中，請稍後再試。";
+            responseDiv.innerText = "Fetch 失敗：" + error.message;
         }
     }
 
-    // 綁定按鈕點擊
     sendBtn.addEventListener('click', sendMessage);
-
-    // 支援按下 Enter 發送
     inputField.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') sendMessage();
     });
